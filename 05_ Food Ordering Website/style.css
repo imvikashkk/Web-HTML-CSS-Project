@@ -1,0 +1,296 @@
+/* Import Roboto Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    /* reset the browser */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/***************** Styling For Complete Page *************/
+html,
+body {
+    line-height: 1.4;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    background-color: #bbb;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+button{
+    padding: 10px 15px;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+
+/********************** NAVIGATION ********************/
+nav {
+    box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.05);
+    position: sticky;
+    top: 0;
+    margin-bottom: 32px;
+    background-color: white;
+    z-index: 1;
+    
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: none !important;      /* rewrite due to Complete Page container*/
+    padding-left: 6vw;
+    padding-right: 6vw;
+    
+}
+
+/* already included 
+.container { 
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+.bar_icon {
+    font-size: 32px;
+}
+
+
+/************************** MAIN ***********************/
+
+/* already included 
+.container { 
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+.main_f {
+    display: flex;
+    gap:100px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ________section food_image________ */
+/* .food_image{
+    width: fit-content;
+} */
+
+
+/* ________section food_content________ */
+.food_content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tag{
+    background-color: #149f39;
+    padding: 5px 10px;
+    color: white;
+    align-self: flex-start;
+}
+
+h1{
+    font-size: 72px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+/* already included
+ button{
+    padding: 10px 15px;
+    border: none;
+} */
+
+.explore_btn{
+    background-color: #ffc066;
+    align-self: flex-start;
+}
+
+/* _________section features__________ */
+.features{
+    display: flex;
+    margin-top: 100px;
+    gap: 20px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.feature{
+    display: flex;
+    gap: 20px;
+}
+
+.feature img{
+    width: 72px;
+}
+
+.feature:hover{
+    transition: 0.2s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
+}
+
+.divide{
+    border: 2px solid #ccc;
+    margin: 20px 0;
+}
+
+/*___________section menu__________*/
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.tag_menu{
+    background-color: #149f39;
+    padding: 5px 10px;
+    color: white;
+    align-self: center;
+}
+
+.grid{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+                   'It1 It1 It2 It3'
+                   'It1 It1 It2 It7'
+                   'It5 It6 It4 It7';
+}
+
+.item1{
+    grid-area: It1;
+}
+
+.item2{
+    grid-area: It2;
+}
+
+.item3{
+    grid-area: It3;
+}
+
+.item4{
+    grid-area: It4;
+}
+
+.item5{
+    grid-area: It5;
+}
+
+.item6{
+    grid-area: It6;
+}
+
+.item7{
+    grid-area: It7;
+}
+
+.grid_image{
+    border-radius: 10px;
+    transition: 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.grid_image:hover{
+    transform: scale(1.2);
+    transition: 1s transform;
+    border: 2px solid rgba(255,255,255,1);
+    box-shadow: 5px 5px 5px rgb(255, 255, 255);
+}
+
+/************************** FOOTER ***********************/
+footer{
+    background-color: #fff0db;
+}
+
+.footer_container{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li{
+    list-style-type: none;
+}
+
+footer h3{
+    margin-bottom: 10px;
+    color: gray;
+}
+
+footer li, footer ul{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.icons_footer{
+    display:flex;
+    gap: 20px;
+}
+/******************* MEDIA QUERIES ********************/
+
+@media (max-width: 900px) {
+
+    .container{
+        gap: 20px;
+    }
+
+    /****** main *******/
+    .main_f{
+        flex-direction: column;
+    }
+
+    .food_image{
+        display: flex;
+        justify-content: center;
+    }
+
+    .food_image img{
+        width: 90%;
+    }
+
+    .food_content{
+        padding: 10px;
+    }
+
+    .food_content h1{
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .features{
+        flex-direction: column;
+    }
+
+    .grid{
+        padding: 15px;
+        gap: 10px;
+        transition: 0.4s ease-in-out;
+    }
+
+    .grid:hover{
+        padding: 40px;
+        transition: 0.4s ease-in-out;
+    }
+
+}
+
+
+@media (max-width: 600px){
+    .footer_container{
+        flex-direction: column;
+    }    
+}

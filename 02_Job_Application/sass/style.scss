@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ccc;
+}
+
+.wrapper{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container{
+    margin: 50px auto 0px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 5px #413131 ;
+    border-radius: 10px;
+}
+
+@media screen and (max-width :600px ){
+    .container{
+        margin: 0;
+    }
+}
+
+.title-web{
+    font-size: 16px;
+}
+
+.form_container{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form_control{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+input, select, textarea{
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+input::placeholder{
+    font-size: 14px;
+}
+
+input::file-selector-button{
+    background-color: grey;
+    
+}
+
+select{
+    background-color: #fff;
+}
+
+option{
+    background-color: #ccc;
+}
+
+
+textarea{
+    resize: none;
+    width: 100%;
+}
+
+@media screen and (min-width :614px ){
+    .address_textarea{
+        grid-column: 1/3;
+    }
+}
+
+input:focus, select:focus, textarea:focus{
+    outline-color: red;
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+.status_links{
+    margin: 30px auto auto 30px;
+    a{
+        display: block;
+        text-decoration: none;
+    }
+}
+
+.button_container{
+    display: flex;
+    justify-content: end;
+    margin-top:30px;
+    gap: 20px;
+
+    button{
+        box-sizing: content-box;
+        padding: 5px 10px;
+        border: 1px solid rgb(164, 158, 158);
+        border-radius: 5%;
+        box-shadow: 2px 2px 2px rgb(59, 35, 35);
+
+        &[type="reset"]{
+            background-color: red;
+        }
+
+        &[type="submit"]{
+            background-color: red;
+        }
+    }
+}
+

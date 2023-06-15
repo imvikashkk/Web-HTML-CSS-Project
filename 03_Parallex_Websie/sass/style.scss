@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+/*****************************************For All Image Section****************************************/
+@mixin imageCompleteSetup($back-image,$min-height, $text-back, $text-color ) {
+    background-image: url($back-image);
+    min-height: $min-height;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    .ptext {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        color: black;
+        text-align: center;
+        font-size: 27px;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+
+        .textbg {
+            background: $text-back;
+            color: $text-color;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    }
+}
+
+/*****************************************************For All Text Section******************************************/
+@mixin section_text($min-height, $back-color, $text-color ) {
+    padding: 50px 80px;
+    text-align: center;
+    min-height: $min-height;
+    background-color: $back-color;
+    color: $text-color;
+
+    /* h1{ } */
+
+    p {
+        margin-top: 10px;
+        text-align: justify;
+    }
+}
+
+/************************************* NOW START SECTION WISE *************************************/
+
+.pimg1 {
+    @include imageCompleteSetup("../images/image1.png",100vh, #313534, #fff);
+}
+
+.sectext1 {
+    @include section_text(50vh, #f4f4f4, #666);
+}
+
+.pimg2 {
+    @include imageCompleteSetup("../images/image2.png",50vh, rgba($color: #362e2e, $alpha: 0.4), #fff)
+}
+
+.sectext2 {
+    @include section_text(50vh, #666, #f4f4f4,);
+}
+
+.pimg3 {
+    @include imageCompleteSetup("../images/image3.png",50vh, rgba($color: #362e2e, $alpha: 0.4), #fff)
+}
+
+.sectext3 {
+    @include section_text(50vh, #666, #f6f6f6);
+}
+
+.pimg4 {
+    @include imageCompleteSetup("../images/image1.png",100vh, #313534, #fff)
+}

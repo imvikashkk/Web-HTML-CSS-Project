@@ -1,0 +1,437 @@
+/* Import Poppins Font from google */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Import animate.css from animate.style website */
+@import 'animate.css';
+
+
+// Color code to variable
+$lighting-color: #0089b7;
+$dark-color: #003d62;
+$darker-color: #003251;
+$secondary-color: #fff700;
+
+
+// Reset Some Properties of CSS on html
+* {
+    /* Browser Reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+a {
+    /* excluding css on a tag */
+    all: unset;
+}
+
+ul {
+    list-style: none;
+}
+
+
+// Creating Some Mixin
+@mixin container() {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+
+/************************** START CODING *************************/
+
+/* Root Tag html */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+
+/*  body tag */
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    color: white;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+/******************** Header ********************/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: $lighting-color;
+    box-shadow: 0px 2px 2px 2px #1a6a84;
+
+    nav {
+        @include container();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+}
+
+nav {
+    .logo {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+
+        li {
+            font-size: 1.8rem;
+            font-weight: 400;
+            border-bottom: 0.4rem solid transparent;
+
+            &:hover {
+                border-bottom: 0.4rem solid $secondary-color;
+                transition: border-bottom 0.3s ease-in-out;
+            }
+        }
+    }
+}
+
+/*********************** Main ************************/
+
+// main{
+//     section#home{}
+//     section#project{}
+//     section#contact{}
+// }
+
+/************ section home ************/
+section#home {
+    background-color: $dark-color;
+    padding: 4rem;
+    border-bottom: 4px solid $lighting-color;
+
+    .home_container {
+        @include container();
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+/* Flip Animation in home img */
+@keyframes flipMe{
+    0%{transform: rotateY(0deg);}
+    25%{transform:rotateY(180deg);}
+    50%{transform:rotateY(360deg);}
+    75%{transform:rotateY(180deg);}
+    100%{transform: rotateY(0deg);}
+}
+    
+
+
+.home_container {
+    .img_dev{
+        animation: backInLeft 1.5s ease-in-out 0.1s, flipMe 20s ease-in-out 1.6s infinite;
+    //  img{
+    //  }
+    }
+    .dev_content {
+        display: grid;
+        place-items: center;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 4rem;
+            font-size: bold;
+
+            overflow: hidden; //* Ensures the content is not revealed until the animation */
+            border-right: 0.15em solid orange; //* The typwriter cursor */
+            white-space: nowrap; //* Keeps the content on a single line */
+            margin: 0 auto; //* Gives that scrolling effect as the typing happens */ /* Adjust as needed */
+            animation: typing 5s steps(40, end) infinite, blinking 0.75s step-end infinite; //* Animation  */
+
+        }
+    }
+}
+
+@keyframes typing {
+
+    /* Animation typing effect in h2 */
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinking {
+
+    /* Animation blinking effect in h2*/
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
+
+
+h1 {
+    .hi_dev {
+        font-size: 6rem;
+        font-weight: bold;
+        color: $secondary-color;
+    }
+
+    .dev_name {
+        font-size: 5rem;
+    }
+}
+
+/************** Section Project **************/
+section#project {
+    background-color: $darker-color;
+    padding-bottom: 8rem;
+
+    h2 {
+        padding: 3rem 0;
+        font-size: 6rem;
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
+    .project_container {
+        max-width: 1100px;
+        margin: 0 auto;
+
+        // .cards-container{}
+    }
+
+
+}
+
+.cards_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+
+    .grid-item {
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        // .card{}
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.7s ease-in-out;
+
+    img {
+        transition: transform 0.4s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: transform 0.4s ease-in-out;
+            opacity: 0.7;
+        }
+    }
+
+    .card-content {
+        background-color: transparent;
+        padding: 2rem;
+        position: relative;
+        top: -6.5rem;
+        margin-bottom: -6.5rem;
+        transform: translateY(100px);
+        transition: transform 0.7s ease-in-out, background-color 0.7s ease-in-out;
+        h3 {
+            text-align: center;
+            transform: translateY(100px);
+            transition: transform 0.7s ease-in-out;
+        }
+    }
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.7s ease-in-out;
+
+
+    .card-content{
+        background-color: white;
+        color: $dark-color;
+        transform: translateY(0px);
+        transition: transform 0.7s ease-in-out, background-color 0.7s ease-in-out;
+        h3{
+            transform: translateY(0px);
+            transition: transform 1s ease-in-out, background-color 0.6s ease-in-out;
+
+        }
+    }
+}
+
+
+/*************** Contact Section *************/
+section#contact{
+    background-color: $dark-color;
+    .contact_container{
+        @include container();
+        height: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        h2{
+        padding: 3rem 0;
+        font-size: 6rem;
+        text-align: center;
+        }
+        // top_contact{}
+        // bottom_contact
+    }
+}
+
+.top_contact{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    .contact_content{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        i{
+            font-weight: 600;
+        }
+    }
+}
+
+.bottom_contact{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    .contact_content{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.contact_content{
+    i{
+        font-size: 3.5rem;
+    }
+    h3{
+        font-size: 3.5rem;
+    }
+}
+
+
+/************************** Footer **************************/
+footer{
+    background-color: $darker-color;
+    h3{
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+/************************** Media Query ************************/
+@media screen and (max-width:842px){
+    html{
+        font-size: 40%;
+    }
+    section#home{
+        img{
+            transform: scale(0.8);
+        }
+    }
+}
+
+@media screen and (max-width:675px){
+    html{
+        font-size: 35%;
+    }
+    section#home{
+        .home_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .img_dev{
+                width: 300px;
+             img{
+                width: 298.4pxpx;
+                margin-left: -7rem;
+             }
+            }
+        }
+        img{
+            transform: scale(0.6);
+        }
+    }
+}
+
+@media screen and (max-width:570px){
+    html{
+        font-size: 40%;
+    }
+    section#home{
+        min-height: 50vh;
+        justify-content: space-around;
+        .home_container {
+            margin-top: -15rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            transform: scale(0.5);
+            margin-bottom: -8rem;
+        }
+    }
+}
+
+@media screen and (max-width:510px){
+    section#contact{
+        .contact_container{
+            height: 36vh;
+        }
+    }
+}
+
+
+@media screen and (max-width:560px){
+    section#contact{
+        display: flex;
+        flex-direction: column;
+        .contact_container{
+            height: 50vh;
+            .top_contact{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+

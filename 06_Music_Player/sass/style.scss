@@ -1,0 +1,327 @@
+/* I am using SASS(SCSS) instead of direct apply the css, So it will be difficult to undersatnd the css code , You should read style.scss and also change in scss*/
+
+
+// Roboto Font Import
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+// Browser Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Creating Some Reusable Variable 
+$purple500: #281154;
+$purple300: #270082;
+$purple600: #1b0058;
+$red600: #dc0000;
+$body: #f9f6ff;
+$max-width: 1200px;
+
+// Creating Mixin For Button
+@mixin button($back-color) {
+    padding: 10px 15px;
+    border: none;
+    background-color: $back-color;
+    color: white;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+
+
+header {
+    background-color: $purple300;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 5px 5px rgba($color: #0d0d0d, $alpha: 0.6);
+
+    .navs {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1vh 10vw;
+
+        .logo {
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                li {
+                    padding: 2px;
+
+                    &:hover {
+                        box-shadow: 0px 2px 2px white;
+                        transition: box-shadow 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// main{      
+//     .overview-sec{}
+//     .music-sec{}
+//     .about_music{}
+//     .video_sec{}
+//     .gift_card{}
+// }
+
+
+.overview-sec {
+    scroll-margin-top: 60px;
+
+    background-image: url("../images/overview.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: grid;
+    color: white;
+    place-items: center;
+    text-align: center;
+
+    .overview_text_box {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        h1 {
+            font-size: 96px;
+        }
+
+        h3 {
+            font-size: 32px;
+        }
+
+        p {
+            font-size: medium;
+        }
+    }
+}
+
+.music-sec {
+    scroll-margin-top: 60px;
+
+    padding: 50px 20px;
+    background-color: rgba($color: $purple500, $alpha: 0.8);
+
+    .music-sec-container {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        color: white;
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        .p-first {
+            font-weight: 400;
+        }
+
+        button {
+            @include button($red600);
+        }
+
+        // .p-second{ }
+
+        .img_ipad_iphone {
+            margin-top: -400px;
+            position: relative;
+            top: 400px;
+
+            // img{ }
+        }
+    }
+}
+
+
+.about_music {
+
+    .about-music-container {
+        max-width: 1180px;
+        margin: 400px auto 0 auto;
+        display: grid;
+        place-items: center;
+        text-align: justify;
+        gap: 30px;
+        // h3{
+
+        // }
+        // p{
+
+        // }
+        button {
+            @include button($purple300);
+        }
+
+        // .mac-img{
+        //     img{
+        //     }
+        // }
+    }
+
+}
+
+
+.video_sec {
+    scroll-margin-top: 59px;
+
+    margin-top: 50px;
+    background-image: url("../images/video.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: grid;
+    color: white;
+    place-items: center;
+    text-align: center;
+
+    .video_sec_container {
+        max-width: 1180px;
+        margin: -200px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        h3 {
+            font-size: 160%;
+        }
+
+        p {
+            font-size: 110%;
+            font-weight: 600;
+        }
+    }
+}
+
+
+.gift_card {
+    scroll-margin-top: 120px;
+
+    max-width: 1180px;
+    margin: 0 auto;
+
+    .gift_card_container {
+        margin: 100px 0;
+        display: flex;
+        justify-content: center;
+        gap:50px ;
+
+        .gift_img {
+            img {
+                &:hover{
+                    transform: rotate(360deg);
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+        }
+
+        .gift_content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h3 {
+                font-size: 160%;
+            }
+
+            .p-first {
+                text-align: justify;
+                font-weight: 380;
+            }
+
+            .p-second {
+                font-weight: 380;
+            }
+
+            button {
+                @include button($purple600)
+            }
+        }
+    }
+}
+
+
+// footer{
+//     .upper-footer{}
+//     .lower-footer{}
+// }
+
+
+.upper-footer{
+    background-color: $purple600;
+    padding: 50px 20px;
+    .upper_footer_container{
+        max-width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        .footer-links{
+            h4{
+                margin-bottom: 10px;
+                border-bottom:2px solid white;
+                font-size: 1.2em;
+            }
+            ul{
+                list-style-type: none;
+                // li{
+
+                // }
+            }
+        }
+    }
+}
+
+.lower-footer{
+    background-color: $purple300;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    p{
+        color: white;
+    }
+}
+

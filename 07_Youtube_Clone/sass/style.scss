@@ -1,0 +1,251 @@
+/* I used SASS (SCSS) in this project, so don't change in css directly, 
+for readability you have to read SCSS instead of CSS */
+
+// Import Roboto Font from Google
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.wrapper {
+    .container {
+        display: flex;
+
+        //    aside{}
+        .sub-container {
+            width: 100%;
+
+            //        header{}
+            //        main{}
+        }
+    }
+}
+
+//Aside
+aside {
+    position: sticky;
+    top: 0;
+    padding: 16px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+
+    // .bars{
+    //     img{
+
+    //     }
+    // }
+
+    .side-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            img {
+                width: 30px;
+            }
+        }
+
+        p {
+            font-size: 10px;
+            margin-top: -5px;
+        }
+    }
+}
+
+
+// Header
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    // Navigation Bar
+    nav {
+        padding: 10px 50px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .log {
+            img {
+                width: 150px;
+                height: auto;
+            }
+        }
+
+        .center-nav {
+            display: flex;
+            gap: 15px;
+
+            .search-bar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                input {
+                    min-width: 600px;
+                    padding: 10px 20px;
+                    border: 0.5px solid #ccc;
+                }
+
+                button {
+                    border: none;
+                    padding: 9px 20px;
+                    height: 40px;
+
+                    img {
+                        height: 20px;
+                    }
+                }
+            }
+
+            .mic {
+                padding: 7px 10px;
+                border-radius: 50%;
+                background-color: #ccc;
+                display: grid;
+                place-items: center;
+
+                img {
+                    width: 20px;
+                }
+            }
+
+        }
+
+        .side-nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            // i{
+            //     img{
+
+            //     }
+            // }
+        }
+    }
+
+    // Tags
+    .tags {
+        display: flex;
+        padding: 10px 50px;
+        gap: 15px;
+        border-top: 1px solid #ccc;
+
+        .tag {
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid rgb(22, 22, 22);
+        }
+
+        .dark {
+            background: #000;
+            color: white;
+        }
+
+        .light {
+            background-color: rgb(2388, 238, 238);
+            color: rgb(67, 67, 67);
+        }
+    }
+
+}
+
+
+main {
+    background-color: rgb(240, 238, 238);
+    min-height: 100vh;
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+        .card {
+            padding: 10px;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+
+            img[src="../images/thumbnail.png"]{
+                border-radius: 5px 5px 0 0;
+            }
+
+            .avatar-content {
+                max-width: 320px;
+                padding-top: 10px;
+                display: flex;
+                gap: 20px;
+
+                // .avatar {
+                //     img {  }
+                // }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: -15px;
+
+                    h3 {
+                        width: 200px;
+                        font-size: 18px;
+                        overflow: scroll;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+
+                        &::-webkit-scrollbar{
+                            display: none;
+                        }
+                        
+                    }
+                    
+
+                    .channel_name {
+                        font-size: 13px;
+                        font-weight: 400;
+                    }
+
+                    .content-status {
+                        display: flex;
+                        gap: 10px;
+
+                        p {
+                            font-size: 11px;
+                        }
+                    }
+                }
+
+                // .dots {
+                //     img {}
+                // }
+            }
+
+
+        }
+
+
+    }
+}
